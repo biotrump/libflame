@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # The install prefix specifies the root directory of the installation.
-export FLAME_INSTALL_PREFIX=$HOME/flame
+#export FLAME_INSTALL_PREFIX=$HOME/flame
+export FLAME_INSTALL_PREFIX=/home/thomas/build/libFLAME/libflame.git/flame
 
 # Override the default compiler search order and default compiler flags.
 export CC=gcc
@@ -17,15 +18,15 @@ export EXTRA_CFLAGS="-march=native"
             --disable-verbose-make-output \
             --enable-static-build \
             --enable-dynamic-build \
-            --enable-autodetect-f77-ldflags \
-            --enable-autodetect-f77-name-mangling \
+            --disable-autodetect-f77-ldflags \
+            --disable-autodetect-f77-name-mangling \
             --disable-max-arg-list-hack \
             --enable-non-critical-code \
-            --disable-builtin-blas \
+            --enable-builtin-blas \
             --disable-lapack2flame \
             --disable-external-lapack-for-subproblems \
-            --enable-external-lapack-interfaces \
-            --disable-blas3-front-end-cntl-trees \
+            --disable-external-lapack-interfaces \
+            --enable-blas3-front-end-cntl-trees \
             --enable-multithreading=pthreads \
             --enable-supermatrix \
             --disable-gpu \
@@ -40,7 +41,7 @@ export EXTRA_CFLAGS="-march=native"
             --enable-memory-leak-counter \
             --enable-blis-use-of-fla-malloc \
             --disable-goto-interfaces \
-            --disable-cblas-interfaces \
+            --enable-cblas-interfaces \
             --enable-portable-timer \
             --disable-windows-build \
             --disable-scc \

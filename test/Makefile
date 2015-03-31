@@ -35,9 +35,9 @@ CONFIG_MK_FRAGMENT  := $(CONFIG_DIRPATH)/$(HOST)/config.mk
 # CC             := gcc
 # LINKER         := $(CC)
 # CFLAGS         := -g -O2 -Wall -Wno-comment
-# LDFLAGS        := 
-# INSTALL_PREFIX := $(HOME)/flame
-
+LDFLAGS        := -lm -lpthread
+HOME := /home2/thomas/libFLAME/libflame.git
+INSTALL_PREFIX := $(HOME)/flame
 
 
 #
@@ -47,15 +47,16 @@ CONFIG_MK_FRAGMENT  := $(CONFIG_DIRPATH)/$(HOST)/config.mk
 # BLAS implementation path. A BLAS library must be given in order to run
 # the libflame test suite. Modify these definitions if needed.
 LIBBLAS_PATH   := $(INSTALL_PREFIX)/lib
+LIBBLAS        := /home/thomas/build/libFLAME/BLIS/blis.git/lib/sandybridge/libblis.a
 #LIBBLAS        := $(LIBBLAS_PATH)/libblas.a
-LIBBLAS        := $(LIBBLAS_PATH)/libgoto.a
+#LIBBLAS        := $(LIBBLAS_PATH)/libgoto.a
 #LIBBLAS        := $(HOME)/blis/lib/libblis.a
 
 # LAPACK implementation path. These values only matter if libflame was
 # configured with the external-lapack-interfaces option enabled. Modify
 # these definitions if needed.
 LIBLAPACK_PATH := $(INSTALL_PREFIX)/lib
-LIBLAPACK      := $(LIBLAPACK_PATH)/liblapack.a
+#LIBLAPACK      := $(LIBLAPACK_PATH)/liblapack.a
 
 
 
